@@ -14,4 +14,6 @@ GROUP BY produto;
 SELECT autor, COUNT(*) AS numero_de_livros FROM livros GROUP BY autor;
 --exc7
 SELECT curso, COUNT(*) AS numero_de_alunos FROM alunos GROUP BY curso;
+--exc8
+SELECT produto, AVG(receita) AS media_de_receita FROM vendas GROUP BY produto;
 
