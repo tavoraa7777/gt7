@@ -11,3 +11,4 @@ SELECT * FROM alunos WHERE curso = 'Engenharia de Software';
 SELECT produto, SUM(receita) AS receita_total FROM vendas 
 GROUP BY produto;
 
+
