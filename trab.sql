@@ -28,4 +28,8 @@ INNER JOIN autores ON livros.autor_id = autores.id;
 SELECT alunos.nome, cursos.nome AS curso 
 FROM alunos 
 LEFT JOIN cursos ON alunos.curso_id = cursos.id;
+--exc13
+SELECT cursos.nome AS curso, alunos.nome 
+FROM cursos 
+RIGHT JOIN alunos ON cursos.id = alunos.curso_id;
 
