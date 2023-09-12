@@ -24,3 +24,7 @@ SELECT autor, COUNT(*) AS numero_de_livros FROM livros GROUP BY autor HAVING num
 SELECT livros.titulo, autores.nome 
 FROM livros 
 INNER JOIN autores ON livros.autor_id = autores.id;
+--exc12 
+SELECT alunos.nome, cursos.nome AS curso 
+FROM alunos 
+LEFT JOIN cursos ON alunos.curso_id = cursos.id;
