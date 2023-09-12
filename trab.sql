@@ -18,3 +18,5 @@ SELECT curso, COUNT(*) AS numero_de_alunos FROM alunos GROUP BY curso;
 SELECT produto, AVG(receita) AS media_de_receita FROM vendas GROUP BY produto;
 --exc9
 SELECT produto, SUM(receita) AS receita_total FROM vendas GROUP BY produto HAVING receita_total > 10000;
+exc--10
+SELECT autor, COUNT(*) AS numero_de_livros FROM livros GROUP BY autor HAVING numero_de_livros > 2;
