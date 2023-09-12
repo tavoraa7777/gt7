@@ -15,4 +15,3 @@ SELECT autor, COUNT(*) AS numero_de_livros FROM livros GROUP BY autor;
 --exc7
 SELECT curso, COUNT(*) AS numero_de_alunos FROM alunos GROUP BY curso;
 
-
