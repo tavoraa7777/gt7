@@ -32,4 +32,7 @@ LEFT JOIN cursos ON alunos.curso_id = cursos.id;
 SELECT cursos.nome AS curso, alunos.nome 
 FROM cursos 
 RIGHT JOIN alunos ON cursos.id = alunos.curso_id;
-
+--exc14
+SELECT autores.nome, livros.titulo 
+FROM autores 
+LEFT JOIN livros ON autores.id = livros.autor_id;
