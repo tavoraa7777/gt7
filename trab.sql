@@ -40,3 +40,9 @@ LEFT JOIN livros ON autores.id = livros.autor_id;
 SELECT alunos.nome, cursos.nome AS curso 
 FROM alunos 
 INNER JOIN cursos ON alunos.curso_id = cursos.id;
+--exc16
+SELECT autor, COUNT(*) AS numero_de_livros 
+FROM livros 
+GROUP BY autor 
+ORDER BY numero_de_livros DESC 
+LIMIT 1;
