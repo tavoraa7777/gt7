@@ -8,3 +8,4 @@ SELECT * FROM livros WHERE autor_id = 1;
 --exc4
 SELECT * FROM alunos WHERE curso = 'Engenharia de Software';
 
+
