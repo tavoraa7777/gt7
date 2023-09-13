@@ -53,3 +53,9 @@ FROM vendas;
 SELECT aluno_id, COUNT(*) AS numero_de_matriculas
 FROM matriculas
 GROUP BY aluno_id;
+--exc19
+SELECT produto, COUNT(*) AS quantidade_de_transacoes
+FROM vendas
+GROUP BY produto
+ORDER BY quantidade_de_transacoes DESC
+LIMIT 1;
