@@ -49,3 +49,7 @@ LIMIT 1;
 --exc17
 SELECT produto, MIN(receita) AS menor_receita 
 FROM vendas;
+--exc18
+SELECT aluno_id, COUNT(*) AS numero_de_matriculas
+FROM matriculas
+GROUP BY aluno_id;
