@@ -46,3 +46,6 @@ FROM livros
 GROUP BY autor 
 ORDER BY numero_de_livros DESC 
 LIMIT 1;
+--exc17
+SELECT produto, MIN(receita) AS menor_receita 
+FROM vendas;
