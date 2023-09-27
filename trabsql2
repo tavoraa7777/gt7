@@ -53,3 +53,29 @@ BEGIN
     FROM Livros
     WHERE AnoPublicacao <= @AnoPublicacao;
 END;
+CREATE PROCEDURE sp_TitulosPorCategoria
+    @NomeCategoria NVARCHAR(50)
+AS
+BEGIN
+    DECLARE @Titulo NVARCHAR(100);
+    
+    DECLARE cursorLivros CURSOR FOR
+    SELECT Titulo
+    FROM Livros
+    INNER JOIN LivrosCategorias ON Livros.LivroID = LivrosCategorias.LivroID
+    INNER JOIN Categorias ON LivrosCategorias.CategoriaID = Categorias.CategoriaID
+    WHERE Categorias.Nome = @NomeCategoria;
+    
+    OPEN cursorLivros;
+    
+    FETCH NEXT FROM cursorLivros INTO @Titulo;
+    
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        PRINT @Titulo;
+        FETCH NEXT FROM cursorLivros INTO @Titulo;
+    END
+    
+    CLOSE cursorLivros;
+    DEALLOCATE cursorLivros;
+END;
