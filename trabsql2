@@ -111,3 +111,10 @@ BEGIN
     INNER JOIN Categorias ON LivrosCategorias.CategoriaID = Categorias.CategoriaID
     WHERE Categorias.Nome = @NomeCategoria;
 END;
+CREATE PROCEDURE sp_LivrosESeusAutores
+AS
+BEGIN
+    SELECT Livros.Titulo, Autores.Nome, Autores.Sobrenome
+    FROM Livros
+    INNER JOIN Autores ON Livros.AutorID = Autores.AutorID;
+END;
