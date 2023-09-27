@@ -94,3 +94,10 @@ BEGIN
         PRINT 'Erro ao adicionar o livro. Título já existe ou dados inválidos.';
     END CATCH
 END;
+CREATE PROCEDURE sp_AutorMaisAntigo
+AS
+BEGIN
+    SELECT TOP 1 NomeAutor
+    FROM Autores
+    ORDER BY DataNascimento;
+END;
