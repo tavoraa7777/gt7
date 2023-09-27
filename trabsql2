@@ -79,3 +79,18 @@ BEGIN
     CLOSE cursorLivros;
     DEALLOCATE cursorLivros;
 END;
+CREATE PROCEDURE sp_AdicionarLivro
+    @Titulo NVARCHAR(100),
+    @AutorID INT,
+    @AnoPublicacao INT
+AS
+BEGIN
+    BEGIN TRY
+        INSERT INTO Livros (Titulo, AutorID, AnoPublicacao)
+        VALUES (@Titulo, @AutorID, @AnoPublicacao);
+        PRINT 'Livro adicionado com sucesso.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Erro ao adicionar o livro. Título já existe ou dados inválidos.';
+    END CATCH
+END;
