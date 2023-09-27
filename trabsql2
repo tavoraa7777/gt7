@@ -45,3 +45,11 @@ BEGIN
         PRINT 'Categoria não possui livros';
     END
 END;
+CREATE PROCEDURE sp_LivrosAteAno
+    @AnoPublicacao INT
+AS
+BEGIN
+    SELECT Titulo
+    FROM Livros
+    WHERE AnoPublicacao <= @AnoPublicacao;
+END;
