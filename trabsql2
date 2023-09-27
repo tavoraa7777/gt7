@@ -26,3 +26,22 @@ BEGIN
     WHERE Categorias.Nome = @NomeCategoria;
 END;
 EXEC sp_ContarLivrosPorCategoria 'NomeCategoria';
+CREATE PROCEDURE sp_VerificarLivrosCategoria
+    @NomeCategoria NVARCHAR(50)
+AS
+BEGIN
+    IF EXISTS (
+        SELECT 1
+        FROM Livros
+        INNER JOIN LivrosCategorias ON Livros.LivroID = LivrosCategorias.LivroID
+        INNER JOIN Categorias ON LivrosCategorias.CategoriaID = Categorias.CategoriaID
+        WHERE Categorias.Nome = @NomeCategoria
+    )
+    BEGIN
+        PRINT 'Categoria possui livros';
+    END
+    ELSE
+    BEGIN
+        PRINT 'Categoria não possui livros';
+    END
+END;
