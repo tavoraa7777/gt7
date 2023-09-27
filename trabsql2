@@ -4,3 +4,14 @@ BEGIN
     SELECT * FROM Autores;
 END;
  EXEC sp_ListarAutores;
+CREATE PROCEDURE sp_LivrosPorCategoria
+    @NomeCategoria NVARCHAR(50)
+AS
+BEGIN
+    SELECT Livros.Titulo
+    FROM Livros
+    INNER JOIN LivrosCategorias ON Livros.LivroID = LivrosCategorias.LivroID
+    INNER JOIN Categorias ON LivrosCategorias.CategoriaID = Categorias.CategoriaID
+    WHERE Categorias.Nome = @NomeCategoria;
+END; 
+EXEC sp_LivrosPorCategoria 'NomeCategoria';
